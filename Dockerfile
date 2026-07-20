@@ -1,4 +1,4 @@
-FROM rocker/r-ver:4.4.3
+FROM rocker/r-ver:4.6.1
 
 USER root
 
@@ -16,15 +16,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libgit2-dev \
     libicu-dev \
     libglpk-dev \
+    libzip-dev \
+    build-essential \
     pandoc \
     zip \
     unzip \
-    build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-RUN R -e "options(repos = c(CRAN='https://cloud.r-project.org')); install.packages('shiny')"
+RUN R -e "install.packages('pak', repos='https://r-lib.github.io/p/pak/stable/')"
 
-RUN R -e "options(repos = c(CRAN='https://cloud.r-project.org')); install.packages(c( \
+RUN R -e "pak::pkg_install(c( \
+    'shiny', \
     'shinydashboard', \
     'DT', \
     'plotly', \
