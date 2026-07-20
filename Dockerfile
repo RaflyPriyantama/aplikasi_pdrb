@@ -19,10 +19,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     pandoc \
     zip \
     unzip \
+    build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-RUN R -e "install.packages(c( \
-    'shiny', \
+RUN R -e "options(repos = c(CRAN='https://cloud.r-project.org')); install.packages('shiny')"
+
+RUN R -e "options(repos = c(CRAN='https://cloud.r-project.org')); install.packages(c( \
     'shinydashboard', \
     'DT', \
     'plotly', \
@@ -39,7 +41,9 @@ RUN R -e "install.packages(c( \
     'jsonlite', \
     'knitr', \
     'rmarkdown' \
-), repos='https://cloud.r-project.org/')"
+))"
+
+RUN R -e "stopifnot(requireNamespace('shiny', quietly = TRUE))"
 
 WORKDIR /app
 
