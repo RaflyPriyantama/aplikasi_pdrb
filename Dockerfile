@@ -1,4 +1,4 @@
-FROM rocker/r-ver:4.6.1
+FROM rocker/shiny:4.4.3
 
 USER root
 
@@ -23,10 +23,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     unzip \
     && rm -rf /var/lib/apt/lists/*
 
-RUN R -e "install.packages('pak', repos='https://r-lib.github.io/p/pak/stable/')"
-
-RUN R -e "pak::pkg_install(c( \
-    'shiny', \
+RUN R -e "options( \
+    repos = c(CRAN = 'https://cloud.r-project.org'), \
+    timeout = 1200 \
+); install.packages(c( \
     'shinydashboard', \
     'DT', \
     'plotly', \
@@ -37,19 +37,29 @@ RUN R -e "pak::pkg_install(c( \
     'openxlsx', \
     'stringr', \
     'scales', \
-    'ggplot2', \
     'tibble', \
-    'htmltools', \
     'jsonlite', \
-    'knitr', \
+    'quarto', \
     'rmarkdown' \
-))"
+), Ncpus = 2)"
 
-RUN R -e "stopifnot(requireNamespace('shiny', quietly = TRUE))"
+RUN R -e "stopifnot( \
+    requireNamespace('shiny', quietly = TRUE), \
+    requireNamespace('shinydashboard', quietly = TRUE), \
+    requireNamespace('DT', quietly = TRUE), \
+    requireNamespace('plotly', quietly = TRUE), \
+    requireNamespace('dplyr', quietly = TRUE), \
+    requireNamespace('readxl', quietly = TRUE), \
+    requireNamespace('openxlsx', quietly = TRUE) \
+)"
 
 WORKDIR /app
 
 COPY . /app
+
+RUN chown -R shiny:shiny /app
+
+USER shiny
 
 EXPOSE 8080
 
