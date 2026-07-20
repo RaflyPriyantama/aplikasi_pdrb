@@ -1,0 +1,23 @@
+---
+title: "Laporan Eksplorasi PDRB"
+output:
+  word_document: default
+  pdf_document: default
+params:
+  tahun: null
+  periode: null
+---
+
+## Ringkasan Utama
+
+## Tren PDRB
+
+## Struktur Ekonomi
+
+## Pertumbuhan dan Sumber Pertumbuhan
+
+## Komparasi Wilayah
+
+## LQ, DLQ, dan Shift Share
+
+## Distribusi Data

@@ -1,0 +1,720 @@
+---
+lang: id
+format:
+  docx:
+    reference-doc: reference_laporan_pdrb.docx
+  pdf:
+    geometry:
+      - top=2.2cm
+      - bottom=2.2cm
+      - left=2.2cm
+      - right=2.2cm
+    colorlinks: false
+execute:
+  echo: false
+  warning: false
+  message: false
+  error: false
+fig-dpi: 180
+---
+
+```{r setup}
+bundle <- readRDS("bundle.rds")
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(ggplot2)
+  library(knitr)
+  library(scales)
+})
+
+navy <- "#173A56"
+teal <- "#2B8A82"
+orange <- "#F39C12"
+light_teal <- "#DDEFEA"
+grey <- "#6B7280"
+
+is_complete <- identical(bundle$meta$jenis, "lengkap")
+max_rows <- if (is_complete) 17L else 5L
+
+fmt_num <- function(x, digits = 4L) {
+  ifelse(
+    is.na(x) | !is.finite(x),
+    "–",
+    formatC(x, format = "f", digits = digits, big.mark = ",", decimal.mark = ".")
+  )
+}
+
+fmt_pct <- function(x, digits = 2L) {
+  ifelse(is.na(x) | !is.finite(x), "–", paste0(fmt_num(x, digits), "%"))
+}
+
+# Label sektor untuk tabel laporan: kode digabung dengan nama sektor,
+# tetapi tidak dibuat sebagai kolom terpisah. Prefix yang sudah ada
+# dibersihkan terlebih dahulu agar tidak muncul "A - A - ...".
+sector_table_label <- function(code, sector) {
+  code <- trimws(as.character(code))
+  sector <- trimws(as.character(sector))
+  code[is.na(code)] <- ""
+  sector[is.na(sector)] <- ""
+
+  # Ambil hanya satu kode kategori yang sah dari kolom Kode.
+  code_match <- regmatches(
+    code,
+    regexpr("^(M,N|R,S,T,U|[A-U])", code, perl = TRUE)
+  )
+  code <- ifelse(nzchar(code_match), code_match, "")
+
+  # Hapus semua prefix kode yang sudah menempel pada nama sektor.
+  # Contoh: "A - A - Pertanian" menjadi "Pertanian".
+  sector <- sub(
+    "^(?:(?:M,N|R,S,T,U|[A-U])\\s*[-–]\\s*)+",
+    "",
+    sector,
+    perl = TRUE
+  )
+  sector <- trimws(sector)
+
+  ifelse(
+    nzchar(code) & nzchar(sector),
+    paste0(code, " - ", sector),
+    ifelse(nzchar(sector), sector, code)
+  )
+}
+
+scale_pdrb <- function(values) {
+  values <- as.numeric(values)
+  max_value <- suppressWarnings(max(abs(values), na.rm = TRUE))
+  if (!is.finite(max_value)) return(list(divisor = 1, label = "Nilai PDRB"))
+  if (max_value >= 1e6) return(list(divisor = 1e6, label = "Triliun Rupiah"))
+  if (max_value >= 1e3) return(list(divisor = 1e3, label = "Miliar Rupiah"))
+  list(divisor = 1, label = "Juta Rupiah")
+}
+
+theme_report <- function() {
+  theme_minimal(base_size = 10.5) +
+    theme(
+      plot.title = element_text(face = "bold", size = 13, color = navy, margin = margin(b = 8)),
+      plot.subtitle = element_text(size = 9.5, color = grey, margin = margin(b = 10)),
+      axis.title = element_text(face = "bold", color = navy),
+      axis.text = element_text(color = "#263238"),
+      panel.grid.minor = element_blank(),
+      panel.grid.major = element_line(color = "#E5E7EB", linewidth = 0.35),
+      legend.position = "top",
+      legend.title = element_blank(),
+      plot.margin = margin(10, 12, 10, 10)
+    )
+}
+
+report_table <- function(data, digits = 4L, align = NULL) {
+  if (is.null(data) || nrow(data) == 0L) {
+    cat("Data belum tersedia.")
+    return(invisible(NULL))
+  }
+  numeric_columns <- vapply(data, is.numeric, logical(1))
+  data[numeric_columns] <- lapply(data[numeric_columns], fmt_num, digits = digits)
+  knitr::kable(data, align = align, booktabs = TRUE)
+}
+
+cat_text <- function(text) cat(text, "\n\n")
+
+cat_analysis <- function(text) {
+  if (!is.null(text) && length(text) > 0L && !is.na(text[[1]]) && nzchar(trimws(as.character(text[[1]])))) {
+    cat("**Interpretasi analisis.** ", as.character(text[[1]]), "\n\n", sep = "")
+  }
+}
+
+ensure_columns <- function(data, spec) {
+  if (is.null(data)) data <- data.frame()
+  for (nm in names(spec)) {
+    if (!nm %in% names(data)) data[[nm]] <- spec[[nm]][0]
+  }
+  data[, names(spec), drop = FALSE]
+}
+
+bundle$lq <- ensure_columns(bundle$lq, list(
+  Kode = character(), Sektor = character(), LQ = numeric(),
+  Status = character(), Interpretasi = character()
+))
+bundle$dlq <- ensure_columns(bundle$dlq, list(
+  Kode = character(), Sektor = character(), `LQ Akhir` = numeric(),
+  DLQ = numeric(), `Status LQ` = character(), `Status DLQ` = character(),
+  Klasifikasi = character()
+))
+bundle$shift <- ensure_columns(bundle$shift, list(
+  Kode = character(), Sektor = character(), CE = numeric(), RIE = numeric(),
+  RSE = numeric(), `Total Perubahan` = numeric(), Tipe = character(),
+  Diagnosis = character(), `Diagnosis Ringkas` = character(),
+  Rekomendasi = character()
+))
+```
+
+::: {custom-style="Title"}
+LAPORAN ANALISIS PRODUK DOMESTIK REGIONAL BRUTO
+:::
+
+::: {custom-style="Subtitle"}
+`r bundle$meta$wilayah`  
+Periode Analisis: `r bundle$meta$periode_sampul`  
+Rentang Analisis: `r bundle$meta$tahun_awal`–`r bundle$meta$tahun_akhir`
+:::
+
+**Jenis laporan:** `r bundle$meta$jenis_label`  
+**Tanggal pembuatan:** `r bundle$meta$tanggal`  
+**Sumber:** Data PDRB yang diunggah dan diolah melalui Dashboard Eksplorasi PDRB.
+
+{{< pagebreak >}}
+
+# Daftar Isi {.unnumbered}
+
+1. Ringkasan Eksekutif  
+2. Identitas dan Kondisi Data  
+3. Gambaran Umum Perekonomian  
+4. Perkembangan PDRB  
+5. Distribusi dan Karakteristik Data  
+6. Struktur Ekonomi  
+7. Perbandingan dengan Wilayah Pembanding  
+8. Analisis Potensi Wilayah  
+9. Kesimpulan  
+10. Catatan Validasi
+
+{{< pagebreak >}}
+
+# Ringkasan Eksekutif
+
+```{r}
+#| results: asis
+cat_text(bundle$narratives$executive)
+```
+
+## Indikator Utama
+
+```{r}
+knitr::kable(bundle$overview_kpi, align = c("l", "l"), booktabs = TRUE)
+```
+
+
+
+
+# Identitas dan Kondisi Data
+
+## Identitas Laporan
+
+```{r}
+identity_table <- data.frame(
+  Keterangan = c(
+    "Wilayah analisis", "Provinsi", "Tahun fokus", "Periode fokus",
+    "Rentang tren", "Jenis laporan", "Tanggal pembuatan", "Sumber data"
+  ),
+  Isi = c(
+    bundle$meta$wilayah, bundle$meta$provinsi, bundle$meta$tahun,
+    bundle$meta$periode, paste0(bundle$meta$tahun_awal, "-", bundle$meta$tahun_akhir),
+    bundle$meta$jenis_label, bundle$meta$tanggal,
+    "Data PDRB yang diunggah pada Dashboard Eksplorasi PDRB"
+  ),
+  check.names = FALSE
+)
+knitr::kable(identity_table, align = c("l", "l"), booktabs = TRUE)
+```
+
+## Kondisi Ketersediaan Data
+
+```{r}
+knitr::kable(bundle$data_status, align = c("l", "l"), booktabs = TRUE)
+```
+
+
+
+# Gambaran Umum Perekonomian
+
+```{r}
+#| results: asis
+cat_text(bundle$narratives$overview)
+```
+
+## Lapangan Usaha Utama
+
+```{r}
+#| fig-width: 8.2
+#| fig-height: 5.0
+top_data <- head(bundle$top_sector_values, if (is_complete) 10L else 5L)
+if (nrow(top_data) > 0L) {
+  scale_info <- scale_pdrb(top_data$Nilai)
+  top_data <- top_data %>%
+    mutate(
+      Nilai_Tampil = Nilai / scale_info$divisor,
+      Sektor_Pendek = ifelse(nchar(Sektor) > 58, paste0(substr(Sektor, 1, 55), "..."), Sektor)
+    )
+  ggplot(top_data, aes(x = reorder(Sektor_Pendek, Nilai_Tampil), y = Nilai_Tampil)) +
+    geom_col(fill = navy, width = 0.68) +
+    geom_text(aes(label = fmt_num(Nilai_Tampil, 2L)), hjust = 1.08, color = "white", size = 3.1) +
+    coord_flip() +
+    labs(
+      title = "Lapangan Usaha dengan PDRB ADHB Terbesar",
+      subtitle = paste(bundle$meta$wilayah, bundle$meta$periode_sampul, sep = " - "),
+      x = NULL,
+      y = scale_info$label
+    ) +
+    theme_report()
+} else {
+  plot.new(); text(0.5, 0.5, "Data lapangan usaha utama belum tersedia")
+}
+```
+
+**Gambar 1.** Lapangan usaha dengan nilai PDRB ADHB terbesar.  
+*Sumber: Data PDRB yang diolah melalui Dashboard Eksplorasi PDRB.*
+
+```{r}
+if (nrow(bundle$top_sector_values) > 0L) {
+  top_table <- head(bundle$top_sector_values, max_rows) %>%
+    mutate(Sektor = sector_table_label(Kode, Sektor)) %>%
+    select(Sektor, Nilai)
+  top_table$Nilai <- vapply(top_table$Nilai, function(x) {
+    info <- scale_pdrb(x)
+    paste0(fmt_num(x / info$divisor, 4L), " ", info$label)
+  }, character(1))
+  knitr::kable(top_table, align = c("l", "r"), booktabs = TRUE)
+}
+```
+
+```{r}
+#| results: asis
+cat_analysis(bundle$analysis_notes$overview)
+```
+
+# Perkembangan PDRB
+
+```{r}
+#| results: asis
+cat_text(bundle$narratives$trend)
+```
+
+## Tren Triwulanan
+
+```{r}
+#| fig-width: 8.6
+#| fig-height: 4.8
+trend_q <- bundle$trend_quarterly
+if (nrow(trend_q) > 0L) {
+  scale_info <- scale_pdrb(trend_q$Nilai)
+  trend_q <- trend_q %>% mutate(Nilai_Tampil = Nilai / scale_info$divisor)
+  ggplot(trend_q, aes(x = reorder(Waktu, Urutan), y = Nilai_Tampil, group = Indikator, color = Indikator)) +
+    geom_line(linewidth = 0.8) +
+    geom_point(size = 1.8) +
+    scale_color_manual(values = c("PDRB ADHB" = navy, "PDRB ADHK" = teal)) +
+    labs(
+      title = "Tren PDRB Triwulanan",
+      subtitle = paste0(bundle$meta$wilayah, ", ", bundle$meta$tahun_awal, "-", bundle$meta$tahun_akhir),
+      x = "Waktu",
+      y = scale_info$label
+    ) +
+    theme_report() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 7.6))
+} else {
+  plot.new(); text(0.5, 0.5, "Data tren triwulanan belum tersedia")
+}
+```
+
+**Gambar 2.** Perkembangan PDRB triwulanan. Nilai tahunan tidak dicampurkan ke dalam seri ini.  
+*Sumber: Data PDRB yang diolah melalui Dashboard Eksplorasi PDRB.*
+
+## Tren Tahunan
+
+```{r}
+#| fig-width: 8.2
+#| fig-height: 4.6
+trend_a <- bundle$trend_annual
+if (nrow(trend_a) > 0L) {
+  scale_info <- scale_pdrb(trend_a$Nilai)
+  trend_a <- trend_a %>% mutate(Nilai_Tampil = Nilai / scale_info$divisor)
+  ggplot(trend_a, aes(x = factor(Tahun), y = Nilai_Tampil, group = Indikator, color = Indikator)) +
+    geom_line(linewidth = 0.9) +
+    geom_point(size = 2.2) +
+    scale_color_manual(values = c("PDRB ADHB" = navy, "PDRB ADHK" = teal)) +
+    labs(
+      title = "Tren PDRB Tahunan",
+      subtitle = paste0(bundle$meta$wilayah, ", ", min(trend_a$Tahun, na.rm = TRUE), "–", max(trend_a$Tahun, na.rm = TRUE)),
+      x = "Tahun",
+      y = scale_info$label
+    ) +
+    theme_report()
+} else {
+  plot.new(); text(0.5, 0.5, "Data tahunan belum tersedia")
+}
+```
+
+**Gambar 3.** Perkembangan PDRB tahunan.  
+*Sumber: Data PDRB yang diolah melalui Dashboard Eksplorasi PDRB.*
+
+```{r}
+#| results: asis
+cat_analysis(bundle$analysis_notes$trend)
+```
+
+# Distribusi dan Karakteristik Data
+
+```{r}
+#| results: asis
+cat_text(bundle$narratives$distribution)
+```
+
+```{r}
+#| fig-width: 8.2
+#| fig-height: 4.8
+dist_data <- bundle$distribution_values
+if (nrow(dist_data) > 1L) {
+  scale_info <- scale_pdrb(dist_data$Nilai)
+  values <- dist_data$Nilai / scale_info$divisor
+  bins <- max(5L, min(10L, floor(sqrt(length(values))) + 1L))
+  data_plot <- data.frame(Nilai = values)
+  ggplot(data_plot, aes(x = Nilai)) +
+    geom_histogram(aes(y = after_stat(count)), bins = bins, fill = navy, alpha = 0.72, color = "white") +
+    geom_density(aes(y = after_stat(density) * length(values) * diff(range(values)) / bins), color = orange, linewidth = 1.0) +
+    labs(
+      title = "Histogram Frekuensi dan Kurva Kernel",
+      subtitle = "Sebaran PDRB ADHB triwulanan pada rentang analisis",
+      x = scale_info$label,
+      y = "Frekuensi"
+    ) +
+    theme_report()
+} else {
+  plot.new(); text(0.5, 0.5, "Observasi belum cukup untuk membentuk histogram")
+}
+```
+
+**Gambar 4.** Distribusi nilai PDRB ADHB triwulanan.  
+*Sumber: Data PDRB yang diolah melalui Dashboard Eksplorasi PDRB.*
+
+```{r}
+knitr::kable(bundle$distribution_stats, align = c("l", "r"), booktabs = TRUE)
+```
+
+```{r}
+#| results: asis
+cat_analysis(bundle$analysis_notes$distribution)
+```
+
+# Struktur Ekonomi
+
+```{r}
+#| results: asis
+cat_text(bundle$narratives$structure)
+```
+
+```{r}
+#| fig-width: 8.2
+#| fig-height: 5.2
+structure_data <- head(bundle$struktur, if (is_complete) 17L else 10L)
+if (nrow(structure_data) > 0L) {
+  structure_data <- structure_data %>%
+    mutate(Sektor_Pendek = ifelse(nchar(Sektor) > 56, paste0(substr(Sektor, 1, 53), "..."), Sektor))
+  ggplot(structure_data, aes(x = reorder(Sektor_Pendek, Distribusi), y = Distribusi)) +
+    geom_col(fill = teal, width = 0.68) +
+    geom_text(aes(label = paste0(fmt_num(Distribusi, 2L), "%")), hjust = 1.08, color = "white", size = 3.0) +
+    coord_flip() +
+    labs(
+      title = "Struktur Ekonomi Menurut Lapangan Usaha",
+      subtitle = paste(bundle$meta$wilayah, bundle$meta$periode_sampul, sep = " - "),
+      x = NULL,
+      y = "Distribusi PDRB (%)"
+    ) +
+    theme_report()
+} else {
+  plot.new(); text(0.5, 0.5, "Data struktur ekonomi belum tersedia")
+}
+```
+
+**Gambar 5.** Struktur ekonomi menurut lapangan usaha.  
+*Sumber: Data PDRB yang diolah melalui Dashboard Eksplorasi PDRB.*
+
+```{r}
+structure_table <- head(bundle$struktur, max_rows) %>%
+  mutate(Sektor = sector_table_label(Kode, Sektor)) %>%
+  select(Sektor, Distribusi)
+if (nrow(structure_table) > 0L) {
+  structure_table$Distribusi <- fmt_pct(structure_table$Distribusi, 4L)
+  knitr::kable(structure_table, align = c("l", "r"), booktabs = TRUE)
+}
+```
+
+```{r}
+#| results: asis
+cat_analysis(bundle$analysis_notes$structure)
+```
+
+# Perbandingan dengan Wilayah Pembanding
+
+```{r}
+#| results: asis
+cat_text(bundle$narratives$comparison)
+```
+
+```{r}
+#| fig-width: 8.2
+#| fig-height: 5.2
+comparison_data <- bundle$comparison
+if (nrow(comparison_data) > 1L) {
+  scale_info <- scale_pdrb(comparison_data$Nilai)
+  comparison_plot <- comparison_data %>%
+    mutate(
+      Nilai_Tampil = Nilai / scale_info$divisor,
+      Wilayah_Pendek = ifelse(nchar(Wilayah) > 38, paste0(substr(Wilayah, 1, 35), "..."), Wilayah),
+      Kelompok = dplyr::case_when(
+        Dipilih ~ "Wilayah laporan",
+        Jenis == "Provinsi/Agregat" ~ "Provinsi pembanding",
+        TRUE ~ "Wilayah lain"
+      )
+    )
+  ggplot(comparison_plot, aes(x = reorder(Wilayah_Pendek, Nilai_Tampil), y = Nilai_Tampil, fill = Kelompok)) +
+    geom_col(width = 0.68) +
+    coord_flip() +
+    scale_fill_manual(values = c("Wilayah laporan" = orange, "Provinsi pembanding" = navy, "Wilayah lain" = teal)) +
+    labs(
+      title = "Perbandingan PDRB ADHB dengan Wilayah Pembanding",
+      subtitle = bundle$meta$periode_sampul,
+      x = NULL,
+      y = scale_info$label
+    ) +
+    theme_report()
+} else {
+  plot.new(); text(0.5, 0.5, "Data komparasi antarwilayah belum tersedia")
+}
+```
+
+**Gambar 6.** Perbandingan PDRB ADHB dengan wilayah pembanding.  
+*Sumber: Data PDRB yang diolah melalui Dashboard Eksplorasi PDRB.*
+
+```{r}
+if (identical(bundle$comparison_summary$mode, "reference")) {
+  comparison_table <- bundle$comparison %>%
+    select(Wilayah, Jenis, Nilai, Proporsi) %>%
+    head(if (is_complete) nrow(bundle$comparison) else 5L)
+  if (nrow(comparison_table) > 0L) {
+    province_reference <- suppressWarnings(as.numeric(bundle$comparison_summary$province_value))
+    if (length(province_reference) > 0L && !is.na(province_reference[[1]]) && is.finite(province_reference[[1]]) && province_reference[[1]] != 0) {
+      comparison_table$Proporsi <- comparison_table$Nilai / province_reference[[1]] * 100
+    }
+    comparison_table$Nilai <- vapply(comparison_table$Nilai, function(x) {
+      info <- scale_pdrb(x)
+      paste0(fmt_num(x / info$divisor, 4L), " ", info$label)
+    }, character(1))
+    comparison_table$Proporsi <- fmt_pct(comparison_table$Proporsi, 2L)
+    names(comparison_table)[names(comparison_table) == "Proporsi"] <- "Proporsi terhadap Provinsi"
+    knitr::kable(comparison_table, align = c("l", "l", "r", "r"), booktabs = TRUE)
+  }
+} else {
+  comparison_table <- bundle$comparison %>%
+    filter(!is.na(Peringkat)) %>%
+    arrange(Peringkat) %>%
+    select(Peringkat, Wilayah, Jenis, Nilai) %>%
+    head(if (is_complete) nrow(bundle$comparison) else 5L)
+  if (nrow(comparison_table) > 0L) {
+    comparison_table$Nilai <- vapply(comparison_table$Nilai, function(x) {
+      info <- scale_pdrb(x)
+      paste0(fmt_num(x / info$divisor, 4L), " ", info$label)
+    }, character(1))
+    knitr::kable(comparison_table, align = c("r", "l", "l", "r"), booktabs = TRUE)
+  }
+}
+```
+
+```{r}
+#| results: asis
+cat_analysis(bundle$analysis_notes$comparison)
+```
+
+# Analisis Potensi Wilayah
+
+Bagian ini menggunakan ADHK dengan provinsi/agregat sebagai wilayah pembanding. Apabila wilayah laporan merupakan provinsi atau data pembanding belum tersedia, bagian ini hanya menampilkan catatan ketersediaan.
+
+## Location Quotient (LQ)
+
+```{r}
+#| results: asis
+cat_text(bundle$narratives$lq)
+```
+
+```{r}
+#| fig-width: 8.2
+#| fig-height: 5.0
+lq_data <- head(bundle$lq, if (is_complete) 17L else 10L)
+if (nrow(lq_data) > 0L) {
+  lq_data <- lq_data %>%
+    mutate(Sektor_Pendek = ifelse(nchar(Sektor) > 55, paste0(substr(Sektor, 1, 52), "..."), Sektor))
+  ggplot(lq_data, aes(x = reorder(Sektor_Pendek, LQ), y = LQ, fill = Status)) +
+    geom_col(width = 0.68) +
+    geom_hline(yintercept = 1, linetype = "dashed", color = orange, linewidth = 0.8) +
+    coord_flip() +
+    scale_fill_manual(values = c("Basis" = teal, "Sama" = grey, "Nonbasis" = navy)) +
+    labs(title = "Nilai Location Quotient Menurut Lapangan Usaha", subtitle = bundle$meta$periode_sampul, x = NULL, y = "LQ") +
+    theme_report()
+} else {
+  plot.new(); text(0.5, 0.5, "Hasil LQ belum tersedia")
+}
+```
+
+**Gambar 7.** Nilai Location Quotient menurut lapangan usaha. Garis putus-putus menunjukkan nilai LQ = 1.  
+*Sumber: Data PDRB yang diolah melalui Dashboard Eksplorasi PDRB.*
+
+```{r}
+lq_table <- bundle$lq %>%
+  arrange(desc(LQ)) %>%
+  head(max_rows) %>%
+  mutate(Sektor = sector_table_label(Kode, Sektor))
+if (nrow(lq_table) > 0L) {
+  lq_table$LQ <- fmt_num(lq_table$LQ, 4L)
+  knitr::kable(
+    lq_table %>% select(Sektor, LQ, Status),
+    align = c("l", "r", "l"),
+    booktabs = TRUE
+  )
+}
+```
+
+```{r}
+#| results: asis
+cat_analysis(bundle$analysis_notes$lq)
+```
+
+## Dynamic Location Quotient (DLQ)
+
+```{r}
+#| results: asis
+cat_text(bundle$narratives$dlq)
+```
+
+```{r}
+#| fig-width: 7.4
+#| fig-height: 4.8
+dlq_data <- bundle$dlq
+if (nrow(dlq_data) > 0L) {
+  print(
+    ggplot(dlq_data, aes(x = `LQ Akhir`, y = DLQ, color = Klasifikasi, label = Kode)) +
+      geom_hline(yintercept = 1, linetype = "dashed", color = grey) +
+      geom_vline(xintercept = 1, linetype = "dashed", color = grey) +
+      geom_point(size = 3, alpha = 0.85) +
+      geom_text(nudge_y = 0.025, size = 3, check_overlap = TRUE, color = navy) +
+      labs(
+        title = "Kuadran Dynamic Location Quotient",
+        subtitle = paste0(bundle$meta$dlq_tahun_awal, "-", bundle$meta$dlq_tahun_akhir),
+        x = "LQ Tahun Akhir",
+        y = "DLQ"
+      ) +
+      theme_report()
+  )
+}
+```
+
+```{r}
+#| results: asis
+if (nrow(bundle$dlq) > 0L) {
+  cat("**Gambar 8.** Kuadran LQ akhir dan DLQ.  \n")
+  cat("*Sumber: Data PDRB yang diolah melalui Dashboard Eksplorasi PDRB.*\n\n")
+} else {
+  cat("*Grafik DLQ tidak ditampilkan karena belum tersedia dua tahun data tahunan ADHK yang dapat dibandingkan.*\n\n")
+}
+```
+
+```{r}
+dlq_table <- bundle$dlq %>%
+  arrange(desc(DLQ), desc(`LQ Akhir`)) %>%
+  head(max_rows) %>%
+  mutate(Sektor = sector_table_label(Kode, Sektor))
+if (nrow(dlq_table) > 0L) {
+  dlq_table$`LQ Akhir` <- fmt_num(dlq_table$`LQ Akhir`, 4L)
+  dlq_table$DLQ <- fmt_num(dlq_table$DLQ, 4L)
+  knitr::kable(
+    dlq_table %>% select(Sektor, `LQ Akhir`, DLQ, Klasifikasi),
+    align = c("l", "r", "r", "l"),
+    booktabs = TRUE
+  )
+}
+```
+
+```{r}
+#| results: asis
+cat_analysis(bundle$analysis_notes$dlq)
+```
+
+## Shift Share
+
+```{r}
+#| results: asis
+cat_text(bundle$narratives$shift)
+```
+
+```{r}
+#| fig-width: 8.2
+#| fig-height: 5.2
+shift_data <- bundle$shift %>% arrange(desc(CE)) %>% head(if (is_complete) 17L else 10L)
+if (nrow(shift_data) > 0L) {
+  shift_data <- shift_data %>%
+    mutate(
+      Sektor_Pendek = ifelse(nchar(Sektor) > 55, paste0(substr(Sektor, 1, 52), "..."), Sektor),
+      Arah = ifelse(CE >= 0, "Positif", "Negatif")
+    )
+  scale_info <- scale_pdrb(shift_data$CE)
+  shift_data <- shift_data %>% mutate(CE_Tampil = CE / scale_info$divisor)
+  ggplot(shift_data, aes(x = reorder(Sektor_Pendek, CE_Tampil), y = CE_Tampil, fill = Arah)) +
+    geom_col(width = 0.68) +
+    coord_flip() +
+    scale_fill_manual(values = c("Positif" = teal, "Negatif" = orange)) +
+    labs(
+      title = "Competitive Effect (CE) Menurut Lapangan Usaha",
+      subtitle = paste0(bundle$meta$shift_tahun_awal, "-", bundle$meta$shift_tahun_akhir),
+      x = NULL,
+      y = scale_info$label
+    ) +
+    theme_report()
+} else {
+  plot.new(); text(0.5, 0.5, "Hasil Shift Share belum tersedia")
+}
+```
+
+**Gambar 9.** Competitive Effect dalam analisis Shift Share.  
+*Sumber: Data PDRB yang diolah melalui Dashboard Eksplorasi PDRB.*
+
+```{r}
+shift_table <- bundle$shift %>%
+  mutate(Tipe_Urut = factor(Tipe, levels = paste0("T", 1:8), ordered = TRUE)) %>%
+  arrange(Tipe_Urut, desc(CE), desc(`Total Perubahan`)) %>%
+  head(max_rows) %>%
+  mutate(Sektor = sector_table_label(Kode, Sektor))
+if (nrow(shift_table) > 0L) {
+  if (is_complete) {
+    shift_table$CE <- fmt_num(shift_table$CE, 4L)
+    shift_table$RIE <- fmt_num(shift_table$RIE, 4L)
+    shift_table$RSE <- fmt_num(shift_table$RSE, 4L)
+    shift_show <- shift_table %>% select(Sektor, CE, RIE, RSE, Tipe, Diagnosis, Rekomendasi)
+    knitr::kable(shift_show, align = c("l", "r", "r", "r", "l", "l", "l"), booktabs = TRUE)
+  } else {
+    shift_show <- shift_table %>% select(Sektor, Tipe, `Diagnosis Ringkas`, Rekomendasi)
+    names(shift_show)[names(shift_show) == "Diagnosis Ringkas"] <- "Diagnosis"
+    knitr::kable(shift_show, align = c("l", "l", "l", "l"), booktabs = TRUE)
+  }
+}
+```
+
+```{r}
+#| results: asis
+cat_analysis(bundle$analysis_notes$shift)
+```
+
+# Kesimpulan
+
+```{r}
+#| results: asis
+cat_text(bundle$narratives$conclusion)
+```
+
+Kesimpulan ini bersifat deskriptif dan disusun berdasarkan data yang tersedia pada dashboard. Penetapan prioritas kebijakan tetap memerlukan penelaahan substansi, konteks sektoral, serta sumber informasi pendukung lainnya.
+
+
+
+# Catatan Validasi
+
+```{r}
+#| results: asis
+for (note in bundle$validation_notes) cat("- ", note, "\n", sep = "")
+```
+
+Nilai kosong, `NA`, dan nilai yang tidak dapat dihitung tidak dipaksakan menjadi angka. Indikator yang memerlukan data pembanding hanya ditampilkan apabila data wilayah analisis dan wilayah pembanding tersedia pada periode yang sesuai.

@@ -1,0 +1,553 @@
+﻿kode_wilayah,nama_wilayah,level_wilayah,kode_provinsi,nama_provinsi
+1100,Provinsi Aceh,Provinsi,1100,Provinsi Aceh
+1101,Kabupaten Aceh Selatan,Kab/Kota,1100,Provinsi Aceh
+1102,Kabupaten Aceh Tenggara,Kab/Kota,1100,Provinsi Aceh
+1103,Kabupaten Aceh Timur,Kab/Kota,1100,Provinsi Aceh
+1104,Kabupaten Aceh Tengah,Kab/Kota,1100,Provinsi Aceh
+1105,Kabupaten Aceh Barat,Kab/Kota,1100,Provinsi Aceh
+1106,Kabupaten Aceh Besar,Kab/Kota,1100,Provinsi Aceh
+1107,Kabupaten Pidie,Kab/Kota,1100,Provinsi Aceh
+1108,Kabupaten Aceh Utara,Kab/Kota,1100,Provinsi Aceh
+1109,Kabupaten Simeulue,Kab/Kota,1100,Provinsi Aceh
+1110,Kabupaten Aceh Singkil,Kab/Kota,1100,Provinsi Aceh
+1111,Kabupaten Bireuen,Kab/Kota,1100,Provinsi Aceh
+1112,Kabupaten Aceh Barat Daya,Kab/Kota,1100,Provinsi Aceh
+1113,Kabupaten Gayo Lues,Kab/Kota,1100,Provinsi Aceh
+1114,Kabupaten Aceh Jaya,Kab/Kota,1100,Provinsi Aceh
+1115,Kabupaten Nagan Raya,Kab/Kota,1100,Provinsi Aceh
+1116,Kabupaten Aceh Tamiang,Kab/Kota,1100,Provinsi Aceh
+1117,Kabupaten Bener Meriah,Kab/Kota,1100,Provinsi Aceh
+1118,Kabupaten Pidie Jaya,Kab/Kota,1100,Provinsi Aceh
+1171,Kota Banda Aceh,Kab/Kota,1100,Provinsi Aceh
+1172,Kota Sabang,Kab/Kota,1100,Provinsi Aceh
+1173,Kota Lhokseumawe,Kab/Kota,1100,Provinsi Aceh
+1174,Kota Langsa,Kab/Kota,1100,Provinsi Aceh
+1175,Kota Subulussalam,Kab/Kota,1100,Provinsi Aceh
+1200,Provinsi Sumatera Utara,Provinsi,1200,Provinsi Sumatera Utara
+1201,Kabupaten Tapanuli Tengah,Kab/Kota,1200,Provinsi Sumatera Utara
+1202,Kabupaten Tapanuli Utara,Kab/Kota,1200,Provinsi Sumatera Utara
+1203,Kabupaten Tapanuli Selatan,Kab/Kota,1200,Provinsi Sumatera Utara
+1204,Kabupaten Nias,Kab/Kota,1200,Provinsi Sumatera Utara
+1205,Kabupaten Langkat,Kab/Kota,1200,Provinsi Sumatera Utara
+1206,Kabupaten Karo,Kab/Kota,1200,Provinsi Sumatera Utara
+1207,Kabupaten Deli Serdang,Kab/Kota,1200,Provinsi Sumatera Utara
+1208,Kabupaten Simalungun,Kab/Kota,1200,Provinsi Sumatera Utara
+1209,Kabupaten Asahan,Kab/Kota,1200,Provinsi Sumatera Utara
+1210,Kabupaten Labuhanbatu,Kab/Kota,1200,Provinsi Sumatera Utara
+1211,Kabupaten Dairi,Kab/Kota,1200,Provinsi Sumatera Utara
+1212,Kabupaten Toba,Kab/Kota,1200,Provinsi Sumatera Utara
+1213,Kabupaten Mandailing Natal,Kab/Kota,1200,Provinsi Sumatera Utara
+1214,Kabupaten Nias Selatan,Kab/Kota,1200,Provinsi Sumatera Utara
+1215,Kabupaten Pakpak Bharat,Kab/Kota,1200,Provinsi Sumatera Utara
+1216,Kabupaten Humbang Hasundutan,Kab/Kota,1200,Provinsi Sumatera Utara
+1217,Kabupaten Samosir,Kab/Kota,1200,Provinsi Sumatera Utara
+1218,Kabupaten Serdang Bedagai,Kab/Kota,1200,Provinsi Sumatera Utara
+1219,Kabupaten Batu Bara,Kab/Kota,1200,Provinsi Sumatera Utara
+1220,Kabupaten Padang Lawas Utara,Kab/Kota,1200,Provinsi Sumatera Utara
+1221,Kabupaten Padang Lawas,Kab/Kota,1200,Provinsi Sumatera Utara
+1222,Kabupaten Labuhanbatu Selatan,Kab/Kota,1200,Provinsi Sumatera Utara
+1223,Kabupaten Labuhanbatu Utara,Kab/Kota,1200,Provinsi Sumatera Utara
+1224,Kabupaten Nias Utara,Kab/Kota,1200,Provinsi Sumatera Utara
+1225,Kabupaten Nias Barat,Kab/Kota,1200,Provinsi Sumatera Utara
+1271,Kota Medan,Kab/Kota,1200,Provinsi Sumatera Utara
+1272,Kota Pematangsiantar,Kab/Kota,1200,Provinsi Sumatera Utara
+1273,Kota Sibolga,Kab/Kota,1200,Provinsi Sumatera Utara
+1274,Kota Tanjungbalai,Kab/Kota,1200,Provinsi Sumatera Utara
+1275,Kota Binjai,Kab/Kota,1200,Provinsi Sumatera Utara
+1276,Kota Tebing Tinggi,Kab/Kota,1200,Provinsi Sumatera Utara
+1277,Kota Padangsidimpuan,Kab/Kota,1200,Provinsi Sumatera Utara
+1278,Kota Gunungsitoli,Kab/Kota,1200,Provinsi Sumatera Utara
+1300,Provinsi Sumatera Barat,Provinsi,1300,Provinsi Sumatera Barat
+1301,Kabupaten Pesisir Selatan,Kab/Kota,1300,Provinsi Sumatera Barat
+1302,Kabupaten Solok,Kab/Kota,1300,Provinsi Sumatera Barat
+1303,Kabupaten Sijunjung,Kab/Kota,1300,Provinsi Sumatera Barat
+1304,Kabupaten Tanah Datar,Kab/Kota,1300,Provinsi Sumatera Barat
+1305,Kabupaten Padang Pariaman,Kab/Kota,1300,Provinsi Sumatera Barat
+1306,Kabupaten Agam,Kab/Kota,1300,Provinsi Sumatera Barat
+1307,Kabupaten Lima Puluh Kota,Kab/Kota,1300,Provinsi Sumatera Barat
+1308,Kabupaten Pasaman,Kab/Kota,1300,Provinsi Sumatera Barat
+1309,Kabupaten Kepulauan Mentawai,Kab/Kota,1300,Provinsi Sumatera Barat
+1310,Kabupaten Dharmasraya,Kab/Kota,1300,Provinsi Sumatera Barat
+1311,Kabupaten Solok Selatan,Kab/Kota,1300,Provinsi Sumatera Barat
+1312,Kabupaten Pasaman Barat,Kab/Kota,1300,Provinsi Sumatera Barat
+1371,Kota Padang,Kab/Kota,1300,Provinsi Sumatera Barat
+1372,Kota Solok,Kab/Kota,1300,Provinsi Sumatera Barat
+1373,Kota Sawahlunto,Kab/Kota,1300,Provinsi Sumatera Barat
+1374,Kota Padang Panjang,Kab/Kota,1300,Provinsi Sumatera Barat
+1375,Kota Bukittinggi,Kab/Kota,1300,Provinsi Sumatera Barat
+1376,Kota Payakumbuh,Kab/Kota,1300,Provinsi Sumatera Barat
+1377,Kota Pariaman,Kab/Kota,1300,Provinsi Sumatera Barat
+1400,Provinsi Riau,Provinsi,1400,Provinsi Riau
+1401,Kabupaten Kampar,Kab/Kota,1400,Provinsi Riau
+1402,Kabupaten Indragiri Hulu,Kab/Kota,1400,Provinsi Riau
+1403,Kabupaten Bengkalis,Kab/Kota,1400,Provinsi Riau
+1404,Kabupaten Indragiri Hilir,Kab/Kota,1400,Provinsi Riau
+1405,Kabupaten Pelalawan,Kab/Kota,1400,Provinsi Riau
+1406,Kabupaten Rokan Hulu,Kab/Kota,1400,Provinsi Riau
+1407,Kabupaten Rokan Hilir,Kab/Kota,1400,Provinsi Riau
+1408,Kabupaten Siak,Kab/Kota,1400,Provinsi Riau
+1409,Kabupaten Kuantan Singingi,Kab/Kota,1400,Provinsi Riau
+1410,Kabupaten Kepulauan Meranti,Kab/Kota,1400,Provinsi Riau
+1471,Kota Pekanbaru,Kab/Kota,1400,Provinsi Riau
+1472,Kota Dumai,Kab/Kota,1400,Provinsi Riau
+1500,Provinsi Jambi,Provinsi,1500,Provinsi Jambi
+1501,Kabupaten Kerinci,Kab/Kota,1500,Provinsi Jambi
+1502,Kabupaten Merangin,Kab/Kota,1500,Provinsi Jambi
+1503,Kabupaten Sarolangun,Kab/Kota,1500,Provinsi Jambi
+1504,Kabupaten Batanghari,Kab/Kota,1500,Provinsi Jambi
+1505,Kabupaten Muaro Jambi,Kab/Kota,1500,Provinsi Jambi
+1506,Kabupaten Tanjung Jabung Barat,Kab/Kota,1500,Provinsi Jambi
+1507,Kabupaten Tanjung Jabung Timur,Kab/Kota,1500,Provinsi Jambi
+1508,Kabupaten Bungo,Kab/Kota,1500,Provinsi Jambi
+1509,Kabupaten Tebo,Kab/Kota,1500,Provinsi Jambi
+1571,Kota Jambi,Kab/Kota,1500,Provinsi Jambi
+1572,Kota Sungai Penuh,Kab/Kota,1500,Provinsi Jambi
+1600,Provinsi Sumatera Selatan,Provinsi,1600,Provinsi Sumatera Selatan
+1601,Kabupaten Ogan Komering Ulu,Kab/Kota,1600,Provinsi Sumatera Selatan
+1602,Kabupaten Ogan Komering Ilir,Kab/Kota,1600,Provinsi Sumatera Selatan
+1603,Kabupaten Muara Enim,Kab/Kota,1600,Provinsi Sumatera Selatan
+1604,Kabupaten Lahat,Kab/Kota,1600,Provinsi Sumatera Selatan
+1605,Kabupaten Musi Rawas,Kab/Kota,1600,Provinsi Sumatera Selatan
+1606,Kabupaten Musi Banyuasin,Kab/Kota,1600,Provinsi Sumatera Selatan
+1607,Kabupaten Banyuasin,Kab/Kota,1600,Provinsi Sumatera Selatan
+1608,Kabupaten Ogan Komering Ulu Timur,Kab/Kota,1600,Provinsi Sumatera Selatan
+1609,Kabupaten Ogan Komering Ulu Selatan,Kab/Kota,1600,Provinsi Sumatera Selatan
+1610,Kabupaten Ogan Ilir,Kab/Kota,1600,Provinsi Sumatera Selatan
+1611,Kabupaten Empat Lawang,Kab/Kota,1600,Provinsi Sumatera Selatan
+1612,Kabupaten Penukal Abab Lematang Ilir,Kab/Kota,1600,Provinsi Sumatera Selatan
+1613,Kabupaten Musi Rawas Utara,Kab/Kota,1600,Provinsi Sumatera Selatan
+1671,Kota Palembang,Kab/Kota,1600,Provinsi Sumatera Selatan
+1672,Kota Pagar Alam,Kab/Kota,1600,Provinsi Sumatera Selatan
+1673,Kota Lubuk Linggau,Kab/Kota,1600,Provinsi Sumatera Selatan
+1674,Kota Prabumulih,Kab/Kota,1600,Provinsi Sumatera Selatan
+1700,Provinsi Bengkulu,Provinsi,1700,Provinsi Bengkulu
+1701,Kabupaten Bengkulu Selatan,Kab/Kota,1700,Provinsi Bengkulu
+1702,Kabupaten Rejang Lebong,Kab/Kota,1700,Provinsi Bengkulu
+1703,Kabupaten Bengkulu Utara,Kab/Kota,1700,Provinsi Bengkulu
+1704,Kabupaten Kaur,Kab/Kota,1700,Provinsi Bengkulu
+1705,Kabupaten Seluma,Kab/Kota,1700,Provinsi Bengkulu
+1706,Kabupaten Mukomuko,Kab/Kota,1700,Provinsi Bengkulu
+1707,Kabupaten Lebong,Kab/Kota,1700,Provinsi Bengkulu
+1708,Kabupaten Kepahiang,Kab/Kota,1700,Provinsi Bengkulu
+1709,Kabupaten Bengkulu Tengah,Kab/Kota,1700,Provinsi Bengkulu
+1771,Kota Bengkulu,Kab/Kota,1700,Provinsi Bengkulu
+1800,Provinsi Lampung,Provinsi,1800,Provinsi Lampung
+1801,Kabupaten Lampung Selatan,Kab/Kota,1800,Provinsi Lampung
+1802,Kabupaten Lampung Tengah,Kab/Kota,1800,Provinsi Lampung
+1803,Kabupaten Lampung Utara,Kab/Kota,1800,Provinsi Lampung
+1804,Kabupaten Lampung Barat,Kab/Kota,1800,Provinsi Lampung
+1805,Kabupaten Tulang Bawang,Kab/Kota,1800,Provinsi Lampung
+1806,Kabupaten Tanggamus,Kab/Kota,1800,Provinsi Lampung
+1807,Kabupaten Lampung Timur,Kab/Kota,1800,Provinsi Lampung
+1808,Kabupaten Way Kanan,Kab/Kota,1800,Provinsi Lampung
+1809,Kabupaten Pesawaran,Kab/Kota,1800,Provinsi Lampung
+1810,Kabupaten Pringsewu,Kab/Kota,1800,Provinsi Lampung
+1811,Kabupaten Mesuji,Kab/Kota,1800,Provinsi Lampung
+1812,Kabupaten Tulang Bawang Barat,Kab/Kota,1800,Provinsi Lampung
+1813,Kabupaten Pesisir Barat,Kab/Kota,1800,Provinsi Lampung
+1871,Kota Bandar Lampung,Kab/Kota,1800,Provinsi Lampung
+1872,Kota Metro,Kab/Kota,1800,Provinsi Lampung
+1900,Provinsi Kepulauan Bangka Belitung,Provinsi,1900,Provinsi Kepulauan Bangka Belitung
+1901,Kabupaten Bangka,Kab/Kota,1900,Provinsi Kepulauan Bangka Belitung
+1902,Kabupaten Belitung,Kab/Kota,1900,Provinsi Kepulauan Bangka Belitung
+1903,Kabupaten Bangka Selatan,Kab/Kota,1900,Provinsi Kepulauan Bangka Belitung
+1904,Kabupaten Bangka Tengah,Kab/Kota,1900,Provinsi Kepulauan Bangka Belitung
+1905,Kabupaten Bangka Barat,Kab/Kota,1900,Provinsi Kepulauan Bangka Belitung
+1906,Kabupaten Belitung Timur,Kab/Kota,1900,Provinsi Kepulauan Bangka Belitung
+1971,Kota Pangkal Pinang,Kab/Kota,1900,Provinsi Kepulauan Bangka Belitung
+2100,Provinsi Kepulauan Riau,Provinsi,2100,Provinsi Kepulauan Riau
+2101,Kabupaten Bintan,Kab/Kota,2100,Provinsi Kepulauan Riau
+2102,Kabupaten Karimun,Kab/Kota,2100,Provinsi Kepulauan Riau
+2103,Kabupaten Natuna,Kab/Kota,2100,Provinsi Kepulauan Riau
+2104,Kabupaten Lingga,Kab/Kota,2100,Provinsi Kepulauan Riau
+2105,Kabupaten Kepulauan Anambas,Kab/Kota,2100,Provinsi Kepulauan Riau
+2171,Kota Batam,Kab/Kota,2100,Provinsi Kepulauan Riau
+2172,Kota Tanjung Pinang,Kab/Kota,2100,Provinsi Kepulauan Riau
+3100,Provinsi Daerah Khusus Ibukota Jakarta,Provinsi,3100,Provinsi Daerah Khusus Ibukota Jakarta
+3101,Kabupaten Administrasi Kepulauan Seribu,Kab/Kota,3100,Provinsi Daerah Khusus Ibukota Jakarta
+3171,Kota Administrasi Jakarta Pusat,Kab/Kota,3100,Provinsi Daerah Khusus Ibukota Jakarta
+3172,Kota Administrasi Jakarta Utara,Kab/Kota,3100,Provinsi Daerah Khusus Ibukota Jakarta
+3173,Kota Administrasi Jakarta Barat,Kab/Kota,3100,Provinsi Daerah Khusus Ibukota Jakarta
+3174,Kota Administrasi Jakarta Selatan,Kab/Kota,3100,Provinsi Daerah Khusus Ibukota Jakarta
+3175,Kota Administrasi Jakarta Timur,Kab/Kota,3100,Provinsi Daerah Khusus Ibukota Jakarta
+3200,Provinsi Jawa Barat,Provinsi,3200,Provinsi Jawa Barat
+3201,Kabupaten Bogor,Kab/Kota,3200,Provinsi Jawa Barat
+3202,Kabupaten Sukabumi,Kab/Kota,3200,Provinsi Jawa Barat
+3203,Kabupaten Cianjur,Kab/Kota,3200,Provinsi Jawa Barat
+3204,Kabupaten Bandung,Kab/Kota,3200,Provinsi Jawa Barat
+3205,Kabupaten Garut,Kab/Kota,3200,Provinsi Jawa Barat
+3206,Kabupaten Tasikmalaya,Kab/Kota,3200,Provinsi Jawa Barat
+3207,Kabupaten Ciamis,Kab/Kota,3200,Provinsi Jawa Barat
+3208,Kabupaten Kuningan,Kab/Kota,3200,Provinsi Jawa Barat
+3209,Kabupaten Cirebon,Kab/Kota,3200,Provinsi Jawa Barat
+3210,Kabupaten Majalengka,Kab/Kota,3200,Provinsi Jawa Barat
+3211,Kabupaten Sumedang,Kab/Kota,3200,Provinsi Jawa Barat
+3212,Kabupaten Indramayu,Kab/Kota,3200,Provinsi Jawa Barat
+3213,Kabupaten Subang,Kab/Kota,3200,Provinsi Jawa Barat
+3214,Kabupaten Purwakarta,Kab/Kota,3200,Provinsi Jawa Barat
+3215,Kabupaten Karawang,Kab/Kota,3200,Provinsi Jawa Barat
+3216,Kabupaten Bekasi,Kab/Kota,3200,Provinsi Jawa Barat
+3217,Kabupaten Bandung Barat,Kab/Kota,3200,Provinsi Jawa Barat
+3218,Kabupaten Pangandaran,Kab/Kota,3200,Provinsi Jawa Barat
+3271,Kota Bogor,Kab/Kota,3200,Provinsi Jawa Barat
+3272,Kota Sukabumi,Kab/Kota,3200,Provinsi Jawa Barat
+3273,Kota Bandung,Kab/Kota,3200,Provinsi Jawa Barat
+3274,Kota Cirebon,Kab/Kota,3200,Provinsi Jawa Barat
+3275,Kota Bekasi,Kab/Kota,3200,Provinsi Jawa Barat
+3276,Kota Depok,Kab/Kota,3200,Provinsi Jawa Barat
+3277,Kota Cimahi,Kab/Kota,3200,Provinsi Jawa Barat
+3278,Kota Tasikmalaya,Kab/Kota,3200,Provinsi Jawa Barat
+3279,Kota Banjar,Kab/Kota,3200,Provinsi Jawa Barat
+3300,Provinsi Jawa Tengah,Provinsi,3300,Provinsi Jawa Tengah
+3301,Kabupaten Cilacap,Kab/Kota,3300,Provinsi Jawa Tengah
+3302,Kabupaten Banyumas,Kab/Kota,3300,Provinsi Jawa Tengah
+3303,Kabupaten Purbalingga,Kab/Kota,3300,Provinsi Jawa Tengah
+3304,Kabupaten Banjarnegara,Kab/Kota,3300,Provinsi Jawa Tengah
+3305,Kabupaten Kebumen,Kab/Kota,3300,Provinsi Jawa Tengah
+3306,Kabupaten Purworejo,Kab/Kota,3300,Provinsi Jawa Tengah
+3307,Kabupaten Wonosobo,Kab/Kota,3300,Provinsi Jawa Tengah
+3308,Kabupaten Magelang,Kab/Kota,3300,Provinsi Jawa Tengah
+3309,Kabupaten Boyolali,Kab/Kota,3300,Provinsi Jawa Tengah
+3310,Kabupaten Klaten,Kab/Kota,3300,Provinsi Jawa Tengah
+3311,Kabupaten Sukoharjo,Kab/Kota,3300,Provinsi Jawa Tengah
+3312,Kabupaten Wonogiri,Kab/Kota,3300,Provinsi Jawa Tengah
+3313,Kabupaten Karanganyar,Kab/Kota,3300,Provinsi Jawa Tengah
+3314,Kabupaten Sragen,Kab/Kota,3300,Provinsi Jawa Tengah
+3315,Kabupaten Grobogan,Kab/Kota,3300,Provinsi Jawa Tengah
+3316,Kabupaten Blora,Kab/Kota,3300,Provinsi Jawa Tengah
+3317,Kabupaten Rembang,Kab/Kota,3300,Provinsi Jawa Tengah
+3318,Kabupaten Pati,Kab/Kota,3300,Provinsi Jawa Tengah
+3319,Kabupaten Kudus,Kab/Kota,3300,Provinsi Jawa Tengah
+3320,Kabupaten Jepara,Kab/Kota,3300,Provinsi Jawa Tengah
+3321,Kabupaten Demak,Kab/Kota,3300,Provinsi Jawa Tengah
+3322,Kabupaten Semarang,Kab/Kota,3300,Provinsi Jawa Tengah
+3323,Kabupaten Temanggung,Kab/Kota,3300,Provinsi Jawa Tengah
+3324,Kabupaten Kendal,Kab/Kota,3300,Provinsi Jawa Tengah
+3325,Kabupaten Batang,Kab/Kota,3300,Provinsi Jawa Tengah
+3326,Kabupaten Pekalongan,Kab/Kota,3300,Provinsi Jawa Tengah
+3327,Kabupaten Pemalang,Kab/Kota,3300,Provinsi Jawa Tengah
+3328,Kabupaten Tegal,Kab/Kota,3300,Provinsi Jawa Tengah
+3329,Kabupaten Brebes,Kab/Kota,3300,Provinsi Jawa Tengah
+3371,Kota Magelang,Kab/Kota,3300,Provinsi Jawa Tengah
+3372,Kota Surakarta,Kab/Kota,3300,Provinsi Jawa Tengah
+3373,Kota Salatiga,Kab/Kota,3300,Provinsi Jawa Tengah
+3374,Kota Semarang,Kab/Kota,3300,Provinsi Jawa Tengah
+3375,Kota Pekalongan,Kab/Kota,3300,Provinsi Jawa Tengah
+3376,Kota Tegal,Kab/Kota,3300,Provinsi Jawa Tengah
+3400,Provinsi Daerah Istimewa Yogyakarta,Provinsi,3400,Provinsi Daerah Istimewa Yogyakarta
+3401,Kabupaten Kulon Progo,Kab/Kota,3400,Provinsi Daerah Istimewa Yogyakarta
+3402,Kabupaten Bantul,Kab/Kota,3400,Provinsi Daerah Istimewa Yogyakarta
+3403,Kabupaten Gunungkidul,Kab/Kota,3400,Provinsi Daerah Istimewa Yogyakarta
+3404,Kabupaten Sleman,Kab/Kota,3400,Provinsi Daerah Istimewa Yogyakarta
+3471,Kota Yogyakarta,Kab/Kota,3400,Provinsi Daerah Istimewa Yogyakarta
+3500,Provinsi Jawa Timur,Provinsi,3500,Provinsi Jawa Timur
+3501,Kabupaten Pacitan,Kab/Kota,3500,Provinsi Jawa Timur
+3502,Kabupaten Ponorogo,Kab/Kota,3500,Provinsi Jawa Timur
+3503,Kabupaten Trenggalek,Kab/Kota,3500,Provinsi Jawa Timur
+3504,Kabupaten Tulungagung,Kab/Kota,3500,Provinsi Jawa Timur
+3505,Kabupaten Blitar,Kab/Kota,3500,Provinsi Jawa Timur
+3506,Kabupaten Kediri,Kab/Kota,3500,Provinsi Jawa Timur
+3507,Kabupaten Malang,Kab/Kota,3500,Provinsi Jawa Timur
+3508,Kabupaten Lumajang,Kab/Kota,3500,Provinsi Jawa Timur
+3509,Kabupaten Jember,Kab/Kota,3500,Provinsi Jawa Timur
+3510,Kabupaten Banyuwangi,Kab/Kota,3500,Provinsi Jawa Timur
+3511,Kabupaten Bondowoso,Kab/Kota,3500,Provinsi Jawa Timur
+3512,Kabupaten Situbondo,Kab/Kota,3500,Provinsi Jawa Timur
+3513,Kabupaten Probolinggo,Kab/Kota,3500,Provinsi Jawa Timur
+3514,Kabupaten Pasuruan,Kab/Kota,3500,Provinsi Jawa Timur
+3515,Kabupaten Sidoarjo,Kab/Kota,3500,Provinsi Jawa Timur
+3516,Kabupaten Mojokerto,Kab/Kota,3500,Provinsi Jawa Timur
+3517,Kabupaten Jombang,Kab/Kota,3500,Provinsi Jawa Timur
+3518,Kabupaten Nganjuk,Kab/Kota,3500,Provinsi Jawa Timur
+3519,Kabupaten Madiun,Kab/Kota,3500,Provinsi Jawa Timur
+3520,Kabupaten Magetan,Kab/Kota,3500,Provinsi Jawa Timur
+3521,Kabupaten Ngawi,Kab/Kota,3500,Provinsi Jawa Timur
+3522,Kabupaten Bojonegoro,Kab/Kota,3500,Provinsi Jawa Timur
+3523,Kabupaten Tuban,Kab/Kota,3500,Provinsi Jawa Timur
+3524,Kabupaten Lamongan,Kab/Kota,3500,Provinsi Jawa Timur
+3525,Kabupaten Gresik,Kab/Kota,3500,Provinsi Jawa Timur
+3526,Kabupaten Bangkalan,Kab/Kota,3500,Provinsi Jawa Timur
+3527,Kabupaten Sampang,Kab/Kota,3500,Provinsi Jawa Timur
+3528,Kabupaten Pamekasan,Kab/Kota,3500,Provinsi Jawa Timur
+3529,Kabupaten Sumenep,Kab/Kota,3500,Provinsi Jawa Timur
+3571,Kota Kediri,Kab/Kota,3500,Provinsi Jawa Timur
+3572,Kota Blitar,Kab/Kota,3500,Provinsi Jawa Timur
+3573,Kota Malang,Kab/Kota,3500,Provinsi Jawa Timur
+3574,Kota Probolinggo,Kab/Kota,3500,Provinsi Jawa Timur
+3575,Kota Pasuruan,Kab/Kota,3500,Provinsi Jawa Timur
+3576,Kota Mojokerto,Kab/Kota,3500,Provinsi Jawa Timur
+3577,Kota Madiun,Kab/Kota,3500,Provinsi Jawa Timur
+3578,Kota Surabaya,Kab/Kota,3500,Provinsi Jawa Timur
+3579,Kota Batu,Kab/Kota,3500,Provinsi Jawa Timur
+3600,Provinsi Banten,Provinsi,3600,Provinsi Banten
+3601,Kabupaten Pandeglang,Kab/Kota,3600,Provinsi Banten
+3602,Kabupaten Lebak,Kab/Kota,3600,Provinsi Banten
+3603,Kabupaten Tangerang,Kab/Kota,3600,Provinsi Banten
+3604,Kabupaten Serang,Kab/Kota,3600,Provinsi Banten
+3671,Kota Tangerang,Kab/Kota,3600,Provinsi Banten
+3672,Kota Cilegon,Kab/Kota,3600,Provinsi Banten
+3673,Kota Serang,Kab/Kota,3600,Provinsi Banten
+3674,Kota Tangerang Selatan,Kab/Kota,3600,Provinsi Banten
+5100,Provinsi Bali,Provinsi,5100,Provinsi Bali
+5101,Kabupaten Jembrana,Kab/Kota,5100,Provinsi Bali
+5102,Kabupaten Tabanan,Kab/Kota,5100,Provinsi Bali
+5103,Kabupaten Badung,Kab/Kota,5100,Provinsi Bali
+5104,Kabupaten Gianyar,Kab/Kota,5100,Provinsi Bali
+5105,Kabupaten Klungkung,Kab/Kota,5100,Provinsi Bali
+5106,Kabupaten Bangli,Kab/Kota,5100,Provinsi Bali
+5107,Kabupaten Karangasem,Kab/Kota,5100,Provinsi Bali
+5108,Kabupaten Buleleng,Kab/Kota,5100,Provinsi Bali
+5171,Kota Denpasar,Kab/Kota,5100,Provinsi Bali
+5200,Provinsi Nusa Tenggara Barat,Provinsi,5200,Provinsi Nusa Tenggara Barat
+5201,Kabupaten Lombok Barat,Kab/Kota,5200,Provinsi Nusa Tenggara Barat
+5202,Kabupaten Lombok Tengah,Kab/Kota,5200,Provinsi Nusa Tenggara Barat
+5203,Kabupaten Lombok Timur,Kab/Kota,5200,Provinsi Nusa Tenggara Barat
+5204,Kabupaten Sumbawa,Kab/Kota,5200,Provinsi Nusa Tenggara Barat
+5205,Kabupaten Dompu,Kab/Kota,5200,Provinsi Nusa Tenggara Barat
+5206,Kabupaten Bima,Kab/Kota,5200,Provinsi Nusa Tenggara Barat
+5207,Kabupaten Sumbawa Barat,Kab/Kota,5200,Provinsi Nusa Tenggara Barat
+5208,Kabupaten Lombok Utara,Kab/Kota,5200,Provinsi Nusa Tenggara Barat
+5271,Kota Mataram,Kab/Kota,5200,Provinsi Nusa Tenggara Barat
+5272,Kota Bima,Kab/Kota,5200,Provinsi Nusa Tenggara Barat
+5300,Provinsi Nusa Tenggara Timur,Provinsi,5300,Provinsi Nusa Tenggara Timur
+5301,Kabupaten Kupang,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5302,Kabupaten Timor Tengah Selatan,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5303,Kabupaten Timor Tengah Utara,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5304,Kabupaten Belu,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5305,Kabupaten Alor,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5306,Kabupaten Flores Timur,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5307,Kabupaten Sikka,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5308,Kabupaten Ende,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5309,Kabupaten Ngada,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5310,Kabupaten Manggarai,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5311,Kabupaten Sumba Timur,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5312,Kabupaten Sumba Barat,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5313,Kabupaten Lembata,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5314,Kabupaten Rote Ndao,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5315,Kabupaten Manggarai Barat,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5316,Kabupaten Nagekeo,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5317,Kabupaten Sumba Tengah,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5318,Kabupaten Sumba Barat Daya,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5319,Kabupaten Manggarai Timur,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5320,Kabupaten Sabu Raijua,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5321,Kabupaten Malaka,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+5371,Kota Kupang,Kab/Kota,5300,Provinsi Nusa Tenggara Timur
+6100,Provinsi Kalimantan Barat,Provinsi,6100,Provinsi Kalimantan Barat
+6101,Kabupaten Sambas,Kab/Kota,6100,Provinsi Kalimantan Barat
+6102,Kabupaten Mempawah,Kab/Kota,6100,Provinsi Kalimantan Barat
+6103,Kabupaten Sanggau,Kab/Kota,6100,Provinsi Kalimantan Barat
+6104,Kabupaten Ketapang,Kab/Kota,6100,Provinsi Kalimantan Barat
+6105,Kabupaten Sintang,Kab/Kota,6100,Provinsi Kalimantan Barat
+6106,Kabupaten Kapuas Hulu,Kab/Kota,6100,Provinsi Kalimantan Barat
+6107,Kabupaten Bengkayang,Kab/Kota,6100,Provinsi Kalimantan Barat
+6108,Kabupaten Landak,Kab/Kota,6100,Provinsi Kalimantan Barat
+6109,Kabupaten Sekadau,Kab/Kota,6100,Provinsi Kalimantan Barat
+6110,Kabupaten Melawi,Kab/Kota,6100,Provinsi Kalimantan Barat
+6111,Kabupaten Kayong Utara,Kab/Kota,6100,Provinsi Kalimantan Barat
+6112,Kabupaten Kubu Raya,Kab/Kota,6100,Provinsi Kalimantan Barat
+6171,Kota Pontianak,Kab/Kota,6100,Provinsi Kalimantan Barat
+6172,Kota Singkawang,Kab/Kota,6100,Provinsi Kalimantan Barat
+6200,Provinsi Kalimantan Tengah,Provinsi,6200,Provinsi Kalimantan Tengah
+6201,Kabupaten Kotawaringin Barat,Kab/Kota,6200,Provinsi Kalimantan Tengah
+6202,Kabupaten Kotawaringin Timur,Kab/Kota,6200,Provinsi Kalimantan Tengah
+6203,Kabupaten Kapuas,Kab/Kota,6200,Provinsi Kalimantan Tengah
+6204,Kabupaten Barito Selatan,Kab/Kota,6200,Provinsi Kalimantan Tengah
+6205,Kabupaten Barito Utara,Kab/Kota,6200,Provinsi Kalimantan Tengah
+6206,Kabupaten Katingan,Kab/Kota,6200,Provinsi Kalimantan Tengah
+6207,Kabupaten Seruyan,Kab/Kota,6200,Provinsi Kalimantan Tengah
+6208,Kabupaten Sukamara,Kab/Kota,6200,Provinsi Kalimantan Tengah
+6209,Kabupaten Lamandau,Kab/Kota,6200,Provinsi Kalimantan Tengah
+6210,Kabupaten Gunung Mas,Kab/Kota,6200,Provinsi Kalimantan Tengah
+6211,Kabupaten Pulang Pisau,Kab/Kota,6200,Provinsi Kalimantan Tengah
+6212,Kabupaten Murung Raya,Kab/Kota,6200,Provinsi Kalimantan Tengah
+6213,Kabupaten Barito Timur,Kab/Kota,6200,Provinsi Kalimantan Tengah
+6271,Kota Palangkaraya,Kab/Kota,6200,Provinsi Kalimantan Tengah
+6300,Provinsi Kalimantan Selatan,Provinsi,6300,Provinsi Kalimantan Selatan
+6301,Kabupaten Tanah Laut,Kab/Kota,6300,Provinsi Kalimantan Selatan
+6302,Kabupaten Kotabaru,Kab/Kota,6300,Provinsi Kalimantan Selatan
+6303,Kabupaten Banjar,Kab/Kota,6300,Provinsi Kalimantan Selatan
+6304,Kabupaten Barito Kuala,Kab/Kota,6300,Provinsi Kalimantan Selatan
+6305,Kabupaten Tapin,Kab/Kota,6300,Provinsi Kalimantan Selatan
+6306,Kabupaten Hulu Sungai Selatan,Kab/Kota,6300,Provinsi Kalimantan Selatan
+6307,Kabupaten Hulu Sungai Tengah,Kab/Kota,6300,Provinsi Kalimantan Selatan
+6308,Kabupaten Hulu Sungai Utara,Kab/Kota,6300,Provinsi Kalimantan Selatan
+6309,Kabupaten Tabalong,Kab/Kota,6300,Provinsi Kalimantan Selatan
+6310,Kabupaten Tanah Bumbu,Kab/Kota,6300,Provinsi Kalimantan Selatan
+6311,Kabupaten Balangan,Kab/Kota,6300,Provinsi Kalimantan Selatan
+6371,Kota Banjarmasin,Kab/Kota,6300,Provinsi Kalimantan Selatan
+6372,Kota Banjarbaru,Kab/Kota,6300,Provinsi Kalimantan Selatan
+6400,Provinsi Kalimantan Timur,Provinsi,6400,Provinsi Kalimantan Timur
+6401,Kabupaten Paser,Kab/Kota,6400,Provinsi Kalimantan Timur
+6402,Kabupaten Kutai Kartanegara,Kab/Kota,6400,Provinsi Kalimantan Timur
+6403,Kabupaten Berau,Kab/Kota,6400,Provinsi Kalimantan Timur
+6407,Kabupaten Kutai Barat,Kab/Kota,6400,Provinsi Kalimantan Timur
+6408,Kabupaten Kutai Timur,Kab/Kota,6400,Provinsi Kalimantan Timur
+6409,Kabupaten Penajam Paser Utara,Kab/Kota,6400,Provinsi Kalimantan Timur
+6411,Kabupaten Mahakam Ulu,Kab/Kota,6400,Provinsi Kalimantan Timur
+6471,Kota Balikpapan,Kab/Kota,6400,Provinsi Kalimantan Timur
+6472,Kota Samarinda,Kab/Kota,6400,Provinsi Kalimantan Timur
+6474,Kota Bontang,Kab/Kota,6400,Provinsi Kalimantan Timur
+6500,Provinsi Kalimantan Utara,Provinsi,6500,Provinsi Kalimantan Utara
+6501,Kabupaten Bulungan,Kab/Kota,6500,Provinsi Kalimantan Utara
+6502,Kabupaten Malinau,Kab/Kota,6500,Provinsi Kalimantan Utara
+6503,Kabupaten Nunukan,Kab/Kota,6500,Provinsi Kalimantan Utara
+6504,Kabupaten Tana Tidung,Kab/Kota,6500,Provinsi Kalimantan Utara
+6571,Kota Tarakan,Kab/Kota,6500,Provinsi Kalimantan Utara
+7100,Provinsi Sulawesi Utara,Provinsi,7100,Provinsi Sulawesi Utara
+7101,Kabupaten Bolaang Mongondow,Kab/Kota,7100,Provinsi Sulawesi Utara
+7102,Kabupaten Minahasa,Kab/Kota,7100,Provinsi Sulawesi Utara
+7103,Kabupaten Kepulauan Sangihe,Kab/Kota,7100,Provinsi Sulawesi Utara
+7104,Kabupaten Kepulauan Talaud,Kab/Kota,7100,Provinsi Sulawesi Utara
+7105,Kabupaten Minahasa Selatan,Kab/Kota,7100,Provinsi Sulawesi Utara
+7106,Kabupaten Minahasa Utara,Kab/Kota,7100,Provinsi Sulawesi Utara
+7107,Kabupaten Minahasa Tenggara,Kab/Kota,7100,Provinsi Sulawesi Utara
+7108,Kabupaten Bolaang Mongondow Utara,Kab/Kota,7100,Provinsi Sulawesi Utara
+7109,Kabupaten Kepulauan Siau Tagulandang Biaro,Kab/Kota,7100,Provinsi Sulawesi Utara
+7110,Kabupaten Bolaang Mongondow Timur,Kab/Kota,7100,Provinsi Sulawesi Utara
+7111,Kabupaten Bolaang Mongondow Selatan,Kab/Kota,7100,Provinsi Sulawesi Utara
+7171,Kota Manado,Kab/Kota,7100,Provinsi Sulawesi Utara
+7172,Kota Bitung,Kab/Kota,7100,Provinsi Sulawesi Utara
+7173,Kota Tomohon,Kab/Kota,7100,Provinsi Sulawesi Utara
+7174,Kota Kotamobagu,Kab/Kota,7100,Provinsi Sulawesi Utara
+7200,Provinsi Sulawesi Tengah,Provinsi,7200,Provinsi Sulawesi Tengah
+7201,Kabupaten Banggai,Kab/Kota,7200,Provinsi Sulawesi Tengah
+7202,Kabupaten Poso,Kab/Kota,7200,Provinsi Sulawesi Tengah
+7203,Kabupaten Donggala,Kab/Kota,7200,Provinsi Sulawesi Tengah
+7204,Kabupaten Toli-Toli,Kab/Kota,7200,Provinsi Sulawesi Tengah
+7205,Kabupaten Buol,Kab/Kota,7200,Provinsi Sulawesi Tengah
+7206,Kabupaten Morowali,Kab/Kota,7200,Provinsi Sulawesi Tengah
+7207,Kabupaten Banggai Kepulauan,Kab/Kota,7200,Provinsi Sulawesi Tengah
+7208,Kabupaten Parigi Moutong,Kab/Kota,7200,Provinsi Sulawesi Tengah
+7209,Kabupaten Tojo Una Una,Kab/Kota,7200,Provinsi Sulawesi Tengah
+7210,Kabupaten Sigi,Kab/Kota,7200,Provinsi Sulawesi Tengah
+7211,Kabupaten Banggai Laut,Kab/Kota,7200,Provinsi Sulawesi Tengah
+7212,Kabupaten Morowali Utara,Kab/Kota,7200,Provinsi Sulawesi Tengah
+7271,Kota Palu,Kab/Kota,7200,Provinsi Sulawesi Tengah
+7300,Provinsi Sulawesi Selatan,Provinsi,7300,Provinsi Sulawesi Selatan
+7301,Kabupaten Kepulauan Selayar,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7302,Kabupaten Bulukumba,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7303,Kabupaten Bantaeng,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7304,Kabupaten Jeneponto,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7305,Kabupaten Takalar,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7306,Kabupaten Gowa,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7307,Kabupaten Sinjai,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7308,Kabupaten Bone,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7309,Kabupaten Maros,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7310,Kabupaten Pangkajene dan Kepulauan,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7311,Kabupaten Barru,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7312,Kabupaten Soppeng,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7313,Kabupaten Wajo,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7314,Kabupaten Sidenreng Rappang,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7315,Kabupaten Pinrang,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7316,Kabupaten Enrekang,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7317,Kabupaten Luwu,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7318,Kabupaten Tana Toraja,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7322,Kabupaten Luwu Utara,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7324,Kabupaten Luwu Timur,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7326,Kabupaten Toraja Utara,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7371,Kota Makassar,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7372,Kota Parepare,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7373,Kota Palopo,Kab/Kota,7300,Provinsi Sulawesi Selatan
+7400,Provinsi Sulawesi Tenggara,Provinsi,7400,Provinsi Sulawesi Tenggara
+7401,Kabupaten Kolaka,Kab/Kota,7400,Provinsi Sulawesi Tenggara
+7402,Kabupaten Konawe,Kab/Kota,7400,Provinsi Sulawesi Tenggara
+7403,Kabupaten Muna,Kab/Kota,7400,Provinsi Sulawesi Tenggara
+7404,Kabupaten Buton,Kab/Kota,7400,Provinsi Sulawesi Tenggara
+7405,Kabupaten Konawe Selatan,Kab/Kota,7400,Provinsi Sulawesi Tenggara
+7406,Kabupaten Bombana,Kab/Kota,7400,Provinsi Sulawesi Tenggara
+7407,Kabupaten Wakatobi,Kab/Kota,7400,Provinsi Sulawesi Tenggara
+7408,Kabupaten Kolaka Utara,Kab/Kota,7400,Provinsi Sulawesi Tenggara
+7409,Kabupaten Konawe Utara,Kab/Kota,7400,Provinsi Sulawesi Tenggara
+7410,Kabupaten Buton Utara,Kab/Kota,7400,Provinsi Sulawesi Tenggara
+7411,Kabupaten Kolaka Timur,Kab/Kota,7400,Provinsi Sulawesi Tenggara
+7412,Kabupaten Konawe Kepulauan,Kab/Kota,7400,Provinsi Sulawesi Tenggara
+7413,Kabupaten Muna Barat,Kab/Kota,7400,Provinsi Sulawesi Tenggara
+7414,Kabupaten Buton Tengah,Kab/Kota,7400,Provinsi Sulawesi Tenggara
+7415,Kabupaten Buton Selatan,Kab/Kota,7400,Provinsi Sulawesi Tenggara
+7471,Kota Kendari,Kab/Kota,7400,Provinsi Sulawesi Tenggara
+7472,Kota Bau Bau,Kab/Kota,7400,Provinsi Sulawesi Tenggara
+7500,Provinsi Gorontalo,Provinsi,7500,Provinsi Gorontalo
+7501,Kabupaten Gorontalo,Kab/Kota,7500,Provinsi Gorontalo
+7502,Kabupaten Boalemo,Kab/Kota,7500,Provinsi Gorontalo
+7503,Kabupaten Bone Bolango,Kab/Kota,7500,Provinsi Gorontalo
+7504,Kabupaten Pohuwato,Kab/Kota,7500,Provinsi Gorontalo
+7505,Kabupaten Gorontalo Utara,Kab/Kota,7500,Provinsi Gorontalo
+7571,Kota Gorontalo,Kab/Kota,7500,Provinsi Gorontalo
+7600,Provinsi Sulawesi Barat,Provinsi,7600,Provinsi Sulawesi Barat
+7601,Kabupaten Pasangkayu,Kab/Kota,7600,Provinsi Sulawesi Barat
+7602,Kabupaten Mamuju,Kab/Kota,7600,Provinsi Sulawesi Barat
+7603,Kabupaten Mamasa,Kab/Kota,7600,Provinsi Sulawesi Barat
+7604,Kabupaten Polewali Mandar,Kab/Kota,7600,Provinsi Sulawesi Barat
+7605,Kabupaten Majene,Kab/Kota,7600,Provinsi Sulawesi Barat
+7606,Kabupaten Mamuju Tengah,Kab/Kota,7600,Provinsi Sulawesi Barat
+8100,Provinsi Maluku,Provinsi,8100,Provinsi Maluku
+8101,Kabupaten Maluku Tengah,Kab/Kota,8100,Provinsi Maluku
+8102,Kabupaten Maluku Tenggara,Kab/Kota,8100,Provinsi Maluku
+8103,Kabupaten Kepulauan Tanimbar,Kab/Kota,8100,Provinsi Maluku
+8104,Kabupaten Buru,Kab/Kota,8100,Provinsi Maluku
+8105,Kabupaten Seram Bagian Timur,Kab/Kota,8100,Provinsi Maluku
+8106,Kabupaten Seram Bagian Barat,Kab/Kota,8100,Provinsi Maluku
+8107,Kabupaten Kepulauan Aru,Kab/Kota,8100,Provinsi Maluku
+8108,Kabupaten Maluku Barat Daya,Kab/Kota,8100,Provinsi Maluku
+8109,Kabupaten Buru Selatan,Kab/Kota,8100,Provinsi Maluku
+8171,Kota Ambon,Kab/Kota,8100,Provinsi Maluku
+8172,Kota Tual,Kab/Kota,8100,Provinsi Maluku
+8200,Provinsi Maluku Utara,Provinsi,8200,Provinsi Maluku Utara
+8201,Kabupaten Halmahera Barat,Kab/Kota,8200,Provinsi Maluku Utara
+8202,Kabupaten Halmahera Tengah,Kab/Kota,8200,Provinsi Maluku Utara
+8203,Kabupaten Halmahera Utara,Kab/Kota,8200,Provinsi Maluku Utara
+8204,Kabupaten Kepulauan Sula,Kab/Kota,8200,Provinsi Maluku Utara
+8205,Kabupaten Halmahera Selatan,Kab/Kota,8200,Provinsi Maluku Utara
+8206,Kabupaten Halmahera Timur,Kab/Kota,8200,Provinsi Maluku Utara
+8207,Kabupaten Pulau Morotai,Kab/Kota,8200,Provinsi Maluku Utara
+8208,Kabupaten Pulau Taliabu,Kab/Kota,8200,Provinsi Maluku Utara
+8271,Kota Ternate,Kab/Kota,8200,Provinsi Maluku Utara
+8272,Kota Tidore Kepulauan,Kab/Kota,8200,Provinsi Maluku Utara
+9100,Provinsi Papua,Provinsi,9100,Provinsi Papua
+9103,Kabupaten Jayapura,Kab/Kota,9100,Provinsi Papua
+9105,Kabupaten Kepulauan Yapen,Kab/Kota,9100,Provinsi Papua
+9106,Kabupaten Biak Numfor,Kab/Kota,9100,Provinsi Papua
+9110,Kabupaten Sarmi,Kab/Kota,9100,Provinsi Papua
+9111,Kabupaten Keerom,Kab/Kota,9100,Provinsi Papua
+9115,Kabupaten Waropen,Kab/Kota,9100,Provinsi Papua
+9119,Kabupaten Supiori,Kab/Kota,9100,Provinsi Papua
+9120,Kabupaten Mamberamo Raya,Kab/Kota,9100,Provinsi Papua
+9171,Kota Jayapura,Kab/Kota,9100,Provinsi Papua
+9200,Provinsi Papua Barat,Provinsi,9200,Provinsi Papua Barat
+9202,Kabupaten Manokwari,Kab/Kota,9200,Provinsi Papua Barat
+9203,Kabupaten Fak Fak,Kab/Kota,9200,Provinsi Papua Barat
+9206,Kabupaten Teluk Bintuni,Kab/Kota,9200,Provinsi Papua Barat
+9207,Kabupaten Teluk Wondama,Kab/Kota,9200,Provinsi Papua Barat
+9208,Kabupaten Kaimana,Kab/Kota,9200,Provinsi Papua Barat
+9211,Kabupaten Manokwari Selatan,Kab/Kota,9200,Provinsi Papua Barat
+9212,Kabupaten Pegunungan Arfak,Kab/Kota,9200,Provinsi Papua Barat
+9300,Provinsi Papua Selatan,Provinsi,9300,Provinsi Papua Selatan
+9301,Kabupaten Merauke,Kab/Kota,9300,Provinsi Papua Selatan
+9302,Kabupaten Boven Digoel,Kab/Kota,9300,Provinsi Papua Selatan
+9303,Kabupaten Mappi,Kab/Kota,9300,Provinsi Papua Selatan
+9304,Kabupaten Asmat,Kab/Kota,9300,Provinsi Papua Selatan
+9400,Provinsi Papua Tengah,Provinsi,9400,Provinsi Papua Tengah
+9401,Kabupaten Nabire,Kab/Kota,9400,Provinsi Papua Tengah
+9402,Kabupaten Puncak Jaya,Kab/Kota,9400,Provinsi Papua Tengah
+9403,Kabupaten Paniai,Kab/Kota,9400,Provinsi Papua Tengah
+9404,Kabupaten Mimika,Kab/Kota,9400,Provinsi Papua Tengah
+9405,Kabupaten Puncak,Kab/Kota,9400,Provinsi Papua Tengah
+9406,Kabupaten Dogiyai,Kab/Kota,9400,Provinsi Papua Tengah
+9407,Kabupaten Intan Jaya,Kab/Kota,9400,Provinsi Papua Tengah
+9408,Kabupaten Deiyai,Kab/Kota,9400,Provinsi Papua Tengah
+9500,Provinsi Papua Pegunungan,Provinsi,9500,Provinsi Papua Pegunungan
+9501,Kabupaten Jayawijaya,Kab/Kota,9500,Provinsi Papua Pegunungan
+9502,Kabupaten Pegunungan Bintang,Kab/Kota,9500,Provinsi Papua Pegunungan
+9503,Kabupaten Yahukimo,Kab/Kota,9500,Provinsi Papua Pegunungan
+9504,Kabupaten Tolikara,Kab/Kota,9500,Provinsi Papua Pegunungan
+9505,Kabupaten Mamberamo Tengah,Kab/Kota,9500,Provinsi Papua Pegunungan
+9506,Kabupaten Yalimo,Kab/Kota,9500,Provinsi Papua Pegunungan
+9507,Kabupaten Lanny Jaya,Kab/Kota,9500,Provinsi Papua Pegunungan
+9508,Kabupaten Nduga,Kab/Kota,9500,Provinsi Papua Pegunungan
+9600,Provinsi Papua Barat Daya,Provinsi,9600,Provinsi Papua Barat Daya
+9601,Kabupaten Sorong,Kab/Kota,9600,Provinsi Papua Barat Daya
+9602,Kabupaten Sorong Selatan,Kab/Kota,9600,Provinsi Papua Barat Daya
+9603,Kabupaten Raja Ampat,Kab/Kota,9600,Provinsi Papua Barat Daya
+9604,Kabupaten Tambrauw,Kab/Kota,9600,Provinsi Papua Barat Daya
+9605,Kabupaten Maybrat,Kab/Kota,9600,Provinsi Papua Barat Daya
+9671,Kota Sorong,Kab/Kota,9600,Provinsi Papua Barat Daya

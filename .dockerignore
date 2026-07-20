@@ -1,0 +1,9 @@
+.Rhistory
+.RData
+.Rproj.user
+.git
+.gitignore
+*.zip
+*.log
+temp/
+tmp/
